@@ -1,14 +1,24 @@
 {
-  "name": "日本代購管理",
+  "name": "日本代購 V5",
   "short_name": "日本代購",
   "description": "手機優先的日本代購清單、發票與結算工具",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f7fcff",
-  "theme_color": "#f7fcff",
+  "background_color": "#f7f2eb",
+  "theme_color": "#f6efe7",
   "icons": [
-    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
-    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
   ]
 }

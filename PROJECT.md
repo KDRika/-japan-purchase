@@ -1,27 +1,19 @@
-# 日本代購 App
+# 日本代購 V5
 
-## 目前版本
-V3 Secure — 手機優先 PWA。
+## 版本重點
+- 淺棕／奶油白質感 UI
+- IndexedDB 大容量資料儲存
+- 自動偵測並搬移 V4 `localStorage` 資料
+- 可匯入 V4 / V5 JSON 備份
+- 商品參考圖與發票皆支援多張
+- 圖片可全螢幕查看、縮放、前後切換
+- 圖片上傳自動壓縮
+- 備份頁顯示瀏覽器儲存空間估計
+- CSP 保持 `connect-src 'none'`，不主動向外部 API 傳資料
 
-## 已完成功能
-- 新增、編輯、刪除代購品項
-- 商品名稱、委託人、店家分類、數量、狀態、日幣金額、備註
-- 商品參考圖可多張上傳，後續追加不會覆蓋舊照片
-- 發票照片可多張上傳，後續追加不會覆蓋舊照片
-- 商品與發票照片縮圖可點開全螢幕查看
-- 照片檢視器支援上一張／下一張、放大／縮小／重設
-- 編輯時可單獨刪除某一張商品或發票照片
-- 舊版單張 receipt 資料會自動轉成 receiptImages 陣列
-- 搜尋、依委託人、依店家、發票紀錄
-- 每位委託人日幣結算
-- JSON 完整備份／還原
-- PWA manifest、App icon、離線 Service Worker
-- CSP：禁止 App 對外發起 API / WebSocket 連線
-- 圖片先在裝置端壓縮後存入 localStorage
-
-## 資料安全模型
-資料只儲存在目前瀏覽器的 localStorage；GitHub Pages 僅提供 App 程式碼，不儲存使用者代購資料或照片。App 的 CSP 使用 `connect-src 'none'`，禁止主動對外傳送資料。
-
-## 部署
-GitHub Pages：main branch / root。
-更新 index.html 或 sw.js 後重新提交，Service Worker cache key 已更新為 `jp-purchase-v3-secure`，以避免手機持續使用舊版快取。
+## 升級步驟
+1. 保留 V4 匯出的 JSON 備份。
+2. 將 V5 六個檔案覆蓋 GitHub Repository 根目錄。
+3. GitHub Pages 自動重新部署。
+4. 首次打開 V5：若 IndexedDB 為空，會自動讀取同網域 V4 `localStorage` 並搬移。
+5. 若自動搬移未成功，進入「備份資料」匯入 V4 JSON 備份。
